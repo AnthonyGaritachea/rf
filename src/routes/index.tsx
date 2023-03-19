@@ -1,11 +1,13 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
+import { useContext } from 'react';
 
+import { AuthContext } from '../context/AuthContext';
 import Login from '../pages/Login';
 
 const CustomRouter = () => {
-    const user = false;
+    const user = useContext(AuthContext);
     let routes;
 
     if (user) {
