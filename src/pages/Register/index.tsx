@@ -1,15 +1,14 @@
 import React from 'react';
-import { useLogin } from './useLogin';
-import { Link } from 'react-router-dom';
+import { useRegister } from './useRegister';
 
-const Login = () => {
-    const { email, password, handleEmailChange, handlePasswordChange } = useLogin();
+const Register = () => {
+    const { email, password, handleEmailChange, handlePasswordChange, handleSubmit } = useRegister();
 
     return (
         <div className="w-full h-screen">
             <div className="w-full h-screen flex flex-col justify-center items-center ">
-                <h1>Login</h1>
-                <form className="w-[50%] flex flex-col">
+                <h1>Register</h1>
+                <form className="w-[50%] flex flex-col" onSubmit={handleSubmit}>
                     <label className="mb-1.5">Email</label>
                     <input
                         className="border-[1px] border-solid border-slate-300 rounded"
@@ -24,16 +23,8 @@ const Login = () => {
                         value={password}
                         onChange={(e) => handlePasswordChange(e)}
                     />
-                    <div className="text-center">
-                        <button className="py-0.5 px-[18px] mt-[35px] mx-auto bg-blue-500 text-white rounded">
-                            Submit
-                        </button>
-                        <p className="mt-5 text-base">
-                            Don't have an Account?{' '}
-                            <Link to="/register">
-                                <span className="underline">Register</span>
-                            </Link>
-                        </p>
+                    <div className="py-0.5 px-[18px] mt-[35px] mx-auto text-center bg-blue-500 text-white rounded">
+                        <button>Submit</button>
                     </div>
                 </form>
             </div>
@@ -41,4 +32,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

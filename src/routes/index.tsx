@@ -5,6 +5,7 @@ import { useContext } from 'react';
 
 import { AuthContext } from '../context/AuthContext';
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const CustomRouter = () => {
     const user = useContext(AuthContext);
@@ -26,6 +27,10 @@ const CustomRouter = () => {
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/register',
+                element: <Register />
             },
             {
                 path: '*',
