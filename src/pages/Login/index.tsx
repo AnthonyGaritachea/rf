@@ -3,13 +3,13 @@ import { useLogin } from './useLogin';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { email, password, handleEmailChange, handlePasswordChange } = useLogin();
+    const { email, password, handleEmailChange, handlePasswordChange, handleSubmit } = useLogin();
 
     return (
         <div className="w-full h-screen">
             <div className="w-full h-screen flex flex-col justify-center items-center ">
                 <h1>Login</h1>
-                <form className="w-[50%] flex flex-col">
+                <form className="w-[50%] flex flex-col" onSubmit={handleSubmit}>
                     <label className="mb-1.5">Email</label>
                     <input
                         className="border-[1px] border-solid border-slate-300 rounded"
@@ -20,7 +20,7 @@ const Login = () => {
                     <label className="mt-5 mb-1.5">Password</label>
                     <input
                         className="border-[1px] border-solid border-slate-300 rounded"
-                        type="text"
+                        type="password"
                         value={password}
                         onChange={(e) => handlePasswordChange(e)}
                     />

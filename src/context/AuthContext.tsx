@@ -17,6 +17,7 @@ const AuthContextProvider = ({ children }: Props) => {
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) setUser(user.uid);
+            if (!user) setUser(null);
             if (!loaded) setLoaded(true);
         });
     }, []);

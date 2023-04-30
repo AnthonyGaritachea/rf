@@ -19,7 +19,7 @@ const CustomRouter = () => {
             },
             {
                 path: '*',
-                element: <p>404 Not Found</p>
+                element: <Navigate to="/home" />
             }
         ]);
     } else {
