@@ -1,0 +1,10 @@
+node_modules
+package*.json
+.env
+.*
+Dockerfile
+dist
+public
+src/assets/images
+./nginx*
+nginx
